@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.30002.166
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CRC15", "CRC15\CRC15.csproj", "{C14BDF90-3540-4839-8846-CB1A2311730F}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{C14BDF90-3540-4839-8846-CB1A2311730F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C14BDF90-3540-4839-8846-CB1A2311730F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C14BDF90-3540-4839-8846-CB1A2311730F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C14BDF90-3540-4839-8846-CB1A2311730F}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {819FC701-989C-40C1-913A-DB4F5BF9DBE2}
+	EndGlobalSection
+EndGlobal

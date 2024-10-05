@@ -1,0 +1,174 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="Исходные файлы">
+      <UniqueIdentifier>{4FC737F1-C7A5-4376-A066-2A32D752A2FF}</UniqueIdentifier>
+      <Extensions>cpp;c;cc;cxx;def;odl;idl;hpj;bat;asm;asmx</Extensions>
+    </Filter>
+    <Filter Include="Файлы заголовков">
+      <UniqueIdentifier>{93995380-89BD-4b04-88EB-625FBE52EBFB}</UniqueIdentifier>
+      <Extensions>h;hh;hpp;hxx;hm;inl;inc;ipp;xsd</Extensions>
+    </Filter>
+    <Filter Include="Файлы ресурсов">
+      <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
+      <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
+    </Filter>
+    <Filter Include="Исходные файлы\Figure">
+      <UniqueIdentifier>{4fb4fe58-bfc6-4ce9-be7a-2945786b2ddf}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Исходные файлы\Figure\Figures">
+      <UniqueIdentifier>{c9a278f1-e7c1-4c11-b98e-1b69d26dc9ac}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Исходные файлы\View">
+      <UniqueIdentifier>{401ea448-3f34-44ee-8480-1012f83d1ef6}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Исходные файлы\View\ConsoleView">
+      <UniqueIdentifier>{e0d08666-8dd4-435c-a977-7e672fa1ab71}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Исходные файлы\View\ConsoleView\Views">
+      <UniqueIdentifier>{6e164539-10ce-4d01-b780-64ae67453dc3}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Исходные файлы\Controller">
+      <UniqueIdentifier>{b214d795-0bd8-4473-8c4c-470961ff0f40}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Файлы заголовков\Figure">
+      <UniqueIdentifier>{8c361fd6-3c9f-445b-b21e-a977576c990d}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Файлы заголовков\Figure\Figures">
+      <UniqueIdentifier>{f0fa0717-87c1-419b-ad17-0af443d5cd26}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Файлы заголовков\Controller">
+      <UniqueIdentifier>{159764dd-b2d2-4a69-9516-7eccbc1fe8c3}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Файлы заголовков\View">
+      <UniqueIdentifier>{3b3ababc-e5f7-4efd-9c62-8dd18a073c6f}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Файлы заголовков\View\ConsoleView">
+      <UniqueIdentifier>{0f0b1450-e38f-456b-9739-0989ff9c8cae}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Файлы заголовков\View\ConsoleView\Views">
+      <UniqueIdentifier>{0a8bb682-baaa-4400-baa2-8e9ddaaf8fc1}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="Desk.h">
+      <Filter>Файлы заголовков</Filter>
+    </ClInclude>
+    <ClInclude Include="Game.h">
+      <Filter>Файлы заголовков</Filter>
+    </ClInclude>
+    <ClInclude Include="Cell.h">
+      <Filter>Файлы заголовков</Filter>
+    </ClInclude>
+    <ClInclude Include="Player.h">
+      <Filter>Файлы заголовков</Filter>
+    </ClInclude>
+    <ClInclude Include="Bishop.h">
+      <Filter>Файлы заголовков\Figure\Figures</Filter>
+    </ClInclude>
+    <ClInclude Include="King.h">
+      <Filter>Файлы заголовков\Figure\Figures</Filter>
+    </ClInclude>
+    <ClInclude Include="Pawn.h">
+      <Filter>Файлы заголовков\Figure\Figures</Filter>
+    </ClInclude>
+    <ClInclude Include="Queen.h">
+      <Filter>Файлы заголовков\Figure\Figures</Filter>
+    </ClInclude>
+    <ClInclude Include="Rook.h">
+      <Filter>Файлы заголовков\Figure\Figures</Filter>
+    </ClInclude>
+    <ClInclude Include="Knight.h">
+      <Filter>Файлы заголовков\Figure\Figures</Filter>
+    </ClInclude>
+    <ClInclude Include="GameMode.h">
+      <Filter>Файлы заголовков\Controller</Filter>
+    </ClInclude>
+    <ClInclude Include="ConsoleView.h">
+      <Filter>Файлы заголовков\View\ConsoleView</Filter>
+    </ClInclude>
+    <ClInclude Include="View.h">
+      <Filter>Файлы заголовков\View</Filter>
+    </ClInclude>
+    <ClInclude Include="DeskConsoleView.h">
+      <Filter>Файлы заголовков\View\ConsoleView\Views</Filter>
+    </ClInclude>
+    <ClInclude Include="ListConsoleView.h">
+      <Filter>Файлы заголовков\View\ConsoleView\Views</Filter>
+    </ClInclude>
+    <ClInclude Include="Figure.h">
+      <Filter>Файлы заголовков\Figure</Filter>
+    </ClInclude>
+    <ClInclude Include="PlayerHuman.h">
+      <Filter>Файлы заголовков</Filter>
+    </ClInclude>
+    <ClInclude Include="PlayerComputer.h">
+      <Filter>Файлы заголовков</Filter>
+    </ClInclude>
+    <ClInclude Include="Snapshot.h">
+      <Filter>Файлы заголовков</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="Desk.cpp">
+      <Filter>Исходные файлы</Filter>
+    </ClCompile>
+    <ClCompile Include="Cell.cpp">
+      <Filter>Исходные файлы</Filter>
+    </ClCompile>
+    <ClCompile Include="Player.cpp">
+      <Filter>Исходные файлы</Filter>
+    </ClCompile>
+    <ClCompile Include="Game.cpp">
+      <Filter>Исходные файлы</Filter>
+    </ClCompile>
+    <ClCompile Include="Main.cpp">
+      <Filter>Исходные файлы</Filter>
+    </ClCompile>
+    <ClCompile Include="Figure.cpp">
+      <Filter>Исходные файлы\Figure</Filter>
+    </ClCompile>
+    <ClCompile Include="Bishop.cpp">
+      <Filter>Исходные файлы\Figure\Figures</Filter>
+    </ClCompile>
+    <ClCompile Include="Rook.cpp">
+      <Filter>Исходные файлы\Figure\Figures</Filter>
+    </ClCompile>
+    <ClCompile Include="King.cpp">
+      <Filter>Исходные файлы\Figure\Figures</Filter>
+    </ClCompile>
+    <ClCompile Include="Knight.cpp">
+      <Filter>Исходные файлы\Figure\Figures</Filter>
+    </ClCompile>
+    <ClCompile Include="Pawn.cpp">
+      <Filter>Исходные файлы\Figure\Figures</Filter>
+    </ClCompile>
+    <ClCompile Include="Queen.cpp">
+      <Filter>Исходные файлы\Figure\Figures</Filter>
+    </ClCompile>
+    <ClCompile Include="View.cpp">
+      <Filter>Исходные файлы\View</Filter>
+    </ClCompile>
+    <ClCompile Include="ConsoleView.cpp">
+      <Filter>Исходные файлы\View\ConsoleView</Filter>
+    </ClCompile>
+    <ClCompile Include="DeskConsoleView.cpp">
+      <Filter>Исходные файлы\View\ConsoleView\Views</Filter>
+    </ClCompile>
+    <ClCompile Include="ListConsoleView.cpp">
+      <Filter>Исходные файлы\View\ConsoleView\Views</Filter>
+    </ClCompile>
+    <ClCompile Include="GameMode.cpp">
+      <Filter>Исходные файлы\Controller</Filter>
+    </ClCompile>
+    <ClCompile Include="PlayerHuman.cpp">
+      <Filter>Исходные файлы</Filter>
+    </ClCompile>
+    <ClCompile Include="PlayerComputer.cpp">
+      <Filter>Исходные файлы</Filter>
+    </ClCompile>
+    <ClCompile Include="Snapshot.cpp">
+      <Filter>Исходные файлы</Filter>
+    </ClCompile>
+  </ItemGroup>
+</Project>

@@ -1,0 +1,457 @@
+.col-1
+{
+    width: 20%;
+    padding: 0px 15px;
+    box-sizing: border-box;
+    float: left;
+}
+.col-2
+{
+    width: 40%;
+    padding: 0px 15px;
+    box-sizing: border-box;
+    float: left; 
+}
+.col-3
+{
+    width: 60%;
+    padding: 0px 15px;
+    box-sizing: border-box;
+    float: left; 
+}
+.col-4
+{
+    width: 80%;
+    padding: 0px 15px;
+    box-sizing: border-box;
+    float: left; 
+}
+.col-5
+{
+    width: 100%;
+    padding: 0px 15px;
+    box-sizing: border-box;
+    float: left; 
+}
+.col-ml-3
+{
+    margin-left: 60%;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+body
+{
+    margin: 0px;
+    background: linear-gradient(132deg,rgb(0,0,160), rgb(0,0,100)) no-repeat;
+}
+img
+{
+    display: block;
+}
+.link:link
+{
+    text-decoration: none;
+    color: #1a0dab;
+}
+.link:visited
+{
+    color: #609;
+}
+.link:hover
+{
+    text-decoration: underline;
+}
+
+
+
+/* Шапка */
+.header
+{
+    margin: 0px 9.75%;
+    overflow: auto;
+}
+.butlogHeader
+{
+    display: flex;
+    align-items: center;
+} 
+.supportHeader
+{
+    font-size: 13px;
+    font-family: "Exo 2.0";
+    color: #ffffff;
+    text-align: right;
+}
+.logoHeader
+{
+    width: 100px;
+}
+.buttonHeader
+{
+    width: 100%;
+}
+.buttonHeaderMenu
+{
+    display: flex;
+    justify-content: space-around;
+    padding: 0px 15px;
+    margin: 0px;
+}
+
+
+
+.buttonHeaderMenuItem
+{
+    list-style: none;
+}
+.buttonHeaderMenuLink
+{
+    text-decoration: none;
+    color: #ffffff;
+    font-size: 22px;
+    font-family: "Exo 2.0";
+}
+.header::after
+{
+    content: ' ';
+    background: url("../img/blackout.png") no-repeat; 
+    background-size: 100vw 512px;
+    position: absolute;
+    left: 0px;
+    width: 100%;
+    height: 512px;
+    z-index: -10;
+    line-height: 0px;
+}
+.logoHeaderImg
+{
+    width: 100%;
+}
+.supportHeaderLink
+{
+    color: #ffffff;
+    font-weight: bold;
+    text-decoration: none;
+}
+
+
+
+/* Main */
+main
+{
+    margin: 0;
+    background: rgb(61,173,242);
+}
+.backgroundBefore, .backgroundAfter
+{
+    width: 100%;
+}
+.backgroundBeforeImg, .backgroundAfterImg
+{
+    width: 100%;
+}
+
+/* слайдер */
+.slider
+{
+    margin-top: 20px;
+    padding: 0px 9.75%;
+    position: relative;
+}
+.sliderBars
+{
+    overflow: auto;
+}
+.sliderBars .col-1
+{
+    display: none;
+}
+/* .sliderBarPos
+{
+    width: 20%;
+    margin: 0px;
+    padding: 0px 15px;
+    box-sizing: border-box;
+    float: left;
+    display: none;
+} */
+.col-1.active
+{
+    display: block;
+}
+.sliderBarImg img
+{
+    width: 100%;
+    border-radius: 20px 20px 0px 0px;
+}
+.sliderBarText
+{
+    position: relative;
+    width: 100%;
+    height: 70px;
+}
+.sliderBarText a
+{
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%,-50%);
+
+    text-align: center;
+    font-size: 23px;
+    font-family: "Exo 2.0";
+    color: #ffffff;
+    text-decoration: none;
+}
+.sliderNav img
+{
+    height: 70px;
+    width: 70px;
+}
+.sliderNavNext, .sliderNavPrev
+{
+    position: absolute;
+    top: 50%;
+    transform: translate(0px, -50%);
+
+    transition: background-color 0.6s ease;
+    border-radius: 35px;
+}
+.sliderNavNext
+{
+    left: 3.125%;
+}
+.sliderNavPrev
+{
+    right: 3.125%;
+}
+.sliderPos
+{
+    margin: 10px 0px;
+    display: flex;
+    justify-content: center;
+}
+.sliderPosSpan
+{
+    cursor: pointer;
+    height: 12px;
+    width: 12px;
+    margin: 0 4px;
+    background-color: #bbb;
+    display: inline-block;
+
+    border-radius: 50%;
+    transition: background-color 0.6s ease;
+}
+
+
+.sliderBar
+{
+    border-radius: 20px;
+    background-color: #545af8;
+}
+.sliderNav a:hover
+{
+    background-color: rgb(207, 207, 207);
+}
+.sliderPosSpan.active, .sliderPosSpan:hover 
+{
+    background-color: #ffffff;
+}
+
+
+
+/* Др */
+.birthday
+{
+    padding: 0px 9.75%;
+    overflow: auto;
+    height: 500px;
+    background: url("../img/birthday.png") no-repeat;
+    background-size: contain;
+}
+
+.birthdayImgDiv
+{
+    width: 64.3%;
+    float: left;
+}
+.birthdayText
+{
+    padding: 0px 15px 0px 15px;
+    width: 35.7%;
+    box-sizing: border-box;
+    float: left;
+
+    font-size: 23px;
+    font-family: "Sitka";
+    color: rgb(0, 0, 0);
+    text-align: justify;
+}
+
+
+.birthdayTextTitle
+{
+    font-size: 25px;
+    font-family: "Exo 2.0";
+    color: rgb(255, 255, 255);
+    text-align: center;
+}
+.birthdayImg
+{
+    width: 60% 
+}
+
+
+/* аккордеон */
+.eventAcc
+{
+    margin: 0px 9.75%;
+}
+.eventAccYear
+{
+    margin: 0px 0px 15px 0px;
+
+    background-color: #99ccff;
+    border-radius: 20px;
+    text-align: justify;
+}
+.eventAccYear.active
+{
+    padding-bottom: 15px;
+}
+.eventAccYearContent 
+{
+    display: none;
+}
+.active .eventAccYearContent 
+{
+    display: block;
+}
+.eventAccYearTitle
+{
+    height: 80px;
+    margin: 0px;
+    padding: 0px;
+    position: relative;
+
+    font-size: 24px;
+    font-family: "Exo 2.0";
+    color: rgb( 0, 0, 51 );
+    cursor: pointer;
+}
+.eventAccYearTitle > h2
+{
+    margin: 0px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+.eventAccYearContentDate
+{
+    margin: 0px;
+}
+.eventAccYearContentRef
+{
+    margin: 0px 0px 10px 0px;
+}
+.eventAccYearContentImg img
+{
+    width: 100%;
+}
+
+
+/* Инфа */
+.meeting
+{
+    margin: 0px 9.75%;
+    overflow: auto;
+}
+
+.meetingImg img
+{
+    text-align: center;
+    display: inline-block;
+    width: 20%;
+}
+.meetingText
+{
+    width: 80%;
+    padding: 0px 15px;
+    box-sizing: border-box;
+    float: left;
+
+    font-size: 20px;
+    font-family: "Sitka";
+    color: rgb(0, 0, 0);
+    text-align: justify;
+}
+
+.passion
+{
+    margin: 0px 9.75%;
+    padding: 0px 15px;
+    box-sizing: border-box;
+
+    font-size: 20px;
+    font-family: "Sitka";
+    color: rgb(0, 0, 0);
+    text-align: justify;
+}
+.passion p:last-child
+{
+    margin-bottom: 0px;
+}
+
+
+.meetingText h2, .passion h2
+{
+    font-size: 25px;
+    font-family: "Exo 2.0";
+    color: rgb(255, 255, 255);
+    text-align: center;
+}
+
+
+/* футер */
+
+.footer
+{
+    margin: 0px 9.75% 30px 9.75%;
+    overflow: auto;
+    position: relative;
+}
+.footerText
+{
+    font-size: 18px;
+    font-family: "Exo 2.0";
+    color: rgb(255, 255, 255);
+    text-align: justify;
+}
+.footerText p
+{
+    margin: 0px;
+}
+
+.footerFacebook
+{
+    width: 100%;
+}
+.footerC
+{
+    position: absolute;
+    bottom: 0px;
+    right: calc(20% + 15px);
+}
