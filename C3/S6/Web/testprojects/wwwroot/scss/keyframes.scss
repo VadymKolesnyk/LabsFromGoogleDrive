@@ -1,0 +1,13 @@
+@keyframes anim-nav{
+    50% {
+        left: 0;
+        bottom: 0;
+        height: 3px;    
+    }
+    100%{
+        left: 0;
+        bottom: 0;
+        height: 100%;
+        z-index: -1;
+    }
+}

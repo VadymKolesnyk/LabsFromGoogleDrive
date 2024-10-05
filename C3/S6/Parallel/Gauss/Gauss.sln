@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.31205.134
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Gauss", "Gauss\Gauss.csproj", "{24F6AC9F-CA28-4428-A095-F1048E0145BF}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{24F6AC9F-CA28-4428-A095-F1048E0145BF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{24F6AC9F-CA28-4428-A095-F1048E0145BF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{24F6AC9F-CA28-4428-A095-F1048E0145BF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{24F6AC9F-CA28-4428-A095-F1048E0145BF}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {9C34AC3D-6C25-45CD-B0FB-72F1FBEC1F8B}
+	EndGlobalSection
+EndGlobal

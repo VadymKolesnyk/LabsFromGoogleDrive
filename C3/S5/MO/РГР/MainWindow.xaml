@@ -1,0 +1,137 @@
+﻿<Window x:Class="UITest.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:UITest"
+        mc:Ignorable="d"
+        Title="РГР МО Колесник Вадим ДА-81" Height="800" Width="1235" Icon="Images/Icon.jpg" WindowStartupLocation="CenterScreen">
+
+    <Grid>
+        <Grid Name="MainPage" Visibility="Collapsed">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="*"/>
+            </Grid.RowDefinitions>
+            <Button Grid.Row="0" Name="FunctionButton" Content="Поиск минимума на промежутке" Margin="10 10 10 5" Click="FunctionButton_Click" FontSize="30" FontWeight="Bold"/>
+            <Button Grid.Row="1" Name="GameButton" Content="Распределение игроков на команды" Margin="10 5 10 10" Click="GameButton_Click" FontSize="30" FontWeight="Bold"/>
+
+        </Grid>
+
+
+        <Grid Name="FunctionPage" Visibility="Collapsed">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="Auto"/>
+            </Grid.RowDefinitions>
+            <TextBlock Name="FunctionText" Grid.Row="0" Margin="10" FontSize="14" FontWeight="Bold"> Функция F(x - 5) + 0.5 F(x) + 0.7 F(x + 5)</TextBlock>
+
+            <Grid Name="FunctionRightPanel" Grid.Row="1">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="1*"/>
+                    <ColumnDefinition Width="0.5*"/>
+                </Grid.ColumnDefinitions>
+                <Image Source="Images/Function.jpg" Grid.Column="0" />
+                <StackPanel x:Name="FunctionPanel" Grid.Column="1" Orientation="Vertical" >
+                    <TextBlock Text="Начальная температура:" Margin="10,10,10,0" />
+                    <TextBox Name="StartTemperatureBox" Margin="10" Text="100"/>
+                    <TextBlock Text="Начальная точка поиска:" Margin="10,10,10,0" />
+                    <TextBox Name="StartPointBox" Margin="10" Text="0"/>
+
+                    <TextBlock Text="Количество итераций:" Margin="10,10,10,0" />
+                    <TextBox Name="AmountOfIterationsBox" Margin="10" Text="1000"/>
+
+                    <TextBlock x:Name="FunctionResult" Margin="10,10,10,10" VerticalAlignment="Bottom" FontSize="14" FontWeight="Bold"><Run Text="Результат: "/><Run Text="Пусто"/></TextBlock>
+                </StackPanel>
+            </Grid>
+
+            <StackPanel Grid.Row="3" Orientation="Horizontal" HorizontalAlignment="Right">
+                <Button Name="FunctionStart" Content="Старт" Margin="10" Width="80" Click="FunctionStart_Click"/>
+                <Button Name="FunctionBack" Content="Назад" Margin="10" Width="80" Click="FunctionBack_Click"/>
+            </StackPanel>
+
+        </Grid>
+
+
+
+        <Grid Name="GamePage" Visibility="Visible">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="Auto"/>
+            </Grid.RowDefinitions>
+            <TextBlock Name="GameText" Grid.Row="0" Margin="10" FontSize="14" FontWeight="Bold">Распределение игроков на команды</TextBlock>
+
+            <Grid Grid.Row="1">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="1*" />
+                    <ColumnDefinition Width="Auto" />
+                    <ColumnDefinition Width="0.5*"/>
+                </Grid.ColumnDefinitions>
+                <Grid Grid.Column="0">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="1*" />
+                        <ColumnDefinition Width="1*"/>
+                    </Grid.ColumnDefinitions>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="*"/>
+                        <RowDefinition Height="Auto"/>
+                    </Grid.RowDefinitions>
+                    <TextBlock Grid.Row="0" Grid.Column="0" Margin="5" FontSize="14" FontWeight="Bold" HorizontalAlignment="Center">Команда A</TextBlock>
+                    <TextBlock Grid.Row="0" Grid.Column="1" Margin="5" FontSize="14" FontWeight="Bold" HorizontalAlignment="Center">Команда B</TextBlock>
+                    <ListView  Grid.Row="1" Grid.Column="0" Name="GameComand1" Margin="10" GridViewColumnHeader.Click="GameComandHeader_Click">
+                        <ListView.View>
+                            <GridView>
+                                <GridViewColumn DisplayMemberBinding="{Binding Path=Name}" Width="75">Name</GridViewColumn>
+                                <GridViewColumn DisplayMemberBinding="{Binding Path=Level}" Width="75">Level</GridViewColumn>
+                                <GridViewColumn DisplayMemberBinding="{Binding Path=Speed}" Width="75">Speed</GridViewColumn>
+                                <GridViewColumn DisplayMemberBinding="{Binding Path=Class}" Width="75">Class</GridViewColumn>
+                                <GridViewColumn DisplayMemberBinding="{Binding Path=Strength}" Width="75">Strength</GridViewColumn>
+                            </GridView>
+                        </ListView.View>
+                    </ListView>
+                    <ListView Grid.Row="1" Grid.Column="1" Name="GameComand2" Margin="10" GridViewColumnHeader.Click="GameComandHeader_Click">
+                        <ListView.View>
+                            <GridView>
+                                <GridViewColumn DisplayMemberBinding="{Binding Path=Name}" Width="75">Name</GridViewColumn>
+                                <GridViewColumn DisplayMemberBinding="{Binding Path=Level}" Width="75">Level</GridViewColumn>
+                                <GridViewColumn DisplayMemberBinding="{Binding Path=Speed}" Width="75">Speed</GridViewColumn>
+                                <GridViewColumn DisplayMemberBinding="{Binding Path=Class}" Width="75">Class</GridViewColumn>
+                                <GridViewColumn DisplayMemberBinding="{Binding Path=Strength}" Width="75">Strength</GridViewColumn>
+                            </GridView>
+                        </ListView.View>
+                    </ListView>
+                    <StackPanel Grid.Row="2" Grid.Column="0">
+                        <TextBlock Margin="10 5 5 5" FontSize="14" FontWeight="Bold">Сумма:</TextBlock>
+                        <TextBlock Name="GameComand1Level" Margin="20 0 0 0" FontSize="14">Level: 0</TextBlock>
+                        <TextBlock Name="GameComand1Speed" Margin="20 0 0 0" FontSize="14">Speed: 0</TextBlock>
+                        <TextBlock Name="GameComand1Strength" Margin="20 0 0 0" FontSize="14">Strength: 0</TextBlock>
+                    </StackPanel>
+                    <StackPanel Grid.Row="2" Grid.Column="1">
+                        <TextBlock Margin="10 5 5 5" FontSize="14" FontWeight="Bold">Сумма:</TextBlock>
+                        <TextBlock Name="GameComand2Level" Margin="20 0 0 0"  FontSize="14">Level: 0</TextBlock>
+                        <TextBlock Name="GameComand2Speed" Margin="20 0 0 0"  FontSize="14">Speed: 0</TextBlock>
+                        <TextBlock Name="GameComand2Strength" Margin="20 0 0 0"  FontSize="14">Strength: 0</TextBlock>
+                    </StackPanel>
+
+                </Grid>
+
+
+                <GridSplitter Grid.Column="1" ShowsPreview="False" Width="3" HorizontalAlignment="Center" VerticalAlignment="Stretch" />
+                <DataGrid Grid.Column="2" Name="GamePlayersGrid" AutoGenerateColumns="True" Margin="10"/>
+
+
+            </Grid>
+
+
+            <StackPanel Grid.Row="3" Orientation="Horizontal" HorizontalAlignment="Right">
+                <Button Name="GameStart" Content="Старт" Margin="10" Width="80" Click="GameStart_Click" />
+                <Button Name="GameBack" Content="Назад" Margin="10" Width="80" Click="GameBack_Click" />
+            </StackPanel>
+            
+
+        </Grid>
+    </Grid>
+</Window>

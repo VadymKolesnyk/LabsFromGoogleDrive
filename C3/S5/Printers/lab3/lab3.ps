@@ -1,0 +1,280 @@
+
+
+/grid
+{
+    /nextvertline
+    {
+        0     297   rlineto
+        5     -297  rmoveto
+    } def
+    /nexthorline
+    {
+        210     0   rlineto
+        -210    5   rmoveto
+    } def
+
+    newpath
+        0   0   moveto
+        60 {nexthorline} repeat
+        0   0   moveto
+        42 {nextvertline} repeat
+    0.2 setlinewidth
+    0.9 setgray
+    stroke
+    0 setgray
+    0.5 setlinewidth
+} def
+/resistor
+{
+    gsave translate rotate
+        newpath
+            0   -2.5    moveto
+            0   5       rlineto
+            10  0       rlineto
+            0   -5      rlineto
+        closepath
+        stroke
+    grestore
+} def
+/capacitor
+{
+    gsave translate rotate
+        newpath
+            0   0       moveto
+            2.5 0       rlineto
+            0   5       rmoveto
+            0   -10     rlineto
+            5   0       rmoveto
+            0   10      rlineto
+            0   -5      rmoveto
+            2.5 0       rlineto
+        closepath
+        stroke  
+    grestore 
+} def
+/inductor
+{
+    /radius {10 6 div} def 
+    gsave translate rotate
+        newpath
+            radius 0 radius 180 0 arc 
+            3 radius mul 0 radius 180 0 arc 
+            5 radius mul 0 radius 180 0 arc 
+        stroke
+    grestore
+} def
+/voltagesource
+{
+    gsave translate rotate
+        newpath
+            5 0 5 0 360 arc 
+            0 0 lineto
+            7.5 1.5 moveto
+            10 0 lineto
+            7.5 -1.5 moveto
+            10 0 lineto
+        stroke
+    grestore
+} def
+/diode
+{
+    gsave translate rotate
+        newpath
+            2.5 2.88675 moveto
+            2.5 -2.88675 lineto
+            7.5 0 lineto
+        closepath
+        stroke
+        newpath
+            7.5 2.88675 moveto
+            7.5 -2.88675 lineto
+            0 0 moveto
+            2.5 0 lineto
+            7.5 0 moveto
+            10 0 lineto 
+        stroke
+    grestore
+} def
+/transistor
+{
+    gsave translate rotate
+        newpath
+            5 0 5 -90 270 arc 
+            2.5 0 lineto
+            4.75 4.5 lineto
+            2.5 4.330127 moveto
+            2.5 -4.330127 lineto
+            0 0 moveto
+            2.5 0 lineto
+        stroke
+        gsave
+            5 5 translate
+            63.43495 rotate
+            2 2 scale
+            newpath
+                0 0 moveto
+                -1 0.57735 lineto
+                -1 -0.57735 lineto
+                closepath
+            fill
+        grestore  
+    grestore  
+} def
+/currentsource
+{
+    gsave translate rotate 
+        newpath
+            5 0 5 0 360 arc
+            2.5 2.5 moveto
+            5 0 lineto
+            2.5 -2.5 lineto
+            5 2.5 moveto
+            7.5 0 lineto
+            5 -2.5 lineto
+        stroke
+    grestore
+} def
+/dot
+{
+    gsave translate
+        newpath
+            0 0 1 0 360 arc
+        fill
+    grestore
+} def
+
+
+
+
+/schematic
+{
+    gsave translate
+        0   15  0   resistor
+        90  60  5   resistor
+        90  60  45  currentsource
+        90  60  25  capacitor
+        90  40  15  inductor
+        -90 0   25  voltagesource
+        0   10  50  diode
+        0   35  50  transistor
+            0   40  dot
+            40  0   dot
+            40  40  dot
+            60  40  dot
+
+        newpath
+            0   15  moveto
+            0   -15 rlineto
+            15  0   rlineto
+            10  0   rmoveto
+            35  0   rlineto
+            0   5   rlineto
+            0   10  rmoveto
+            0   10  rlineto
+            0   10  rmoveto
+            0   10  rlineto
+            0   10  rmoveto
+            0   5   rlineto
+            -20 0   rlineto
+            0   -5  rlineto
+            -5  -5  rmoveto
+            -15 0   rlineto
+            -10 0   rmoveto
+            -10 0   rlineto
+            0   -25 rlineto
+            
+            40  0   moveto
+            0   15  rlineto
+            0   10  rmoveto
+            0   20  rlineto
+
+            0   40  moveto
+            60  0   rlineto
+        stroke
+    grestore
+} def
+
+/text
+{
+    gsave translate
+        0   0   moveto
+        1   -1  scale
+        /Helvetica findfont
+        exch scalefont
+        setfont
+        show
+    grestore
+} def
+
+/table
+{
+    gsave translate
+        gsave
+                0  30   translate
+            0   5  0    resistor                    
+            0   5  20   capacitor                   
+            0   5  40   inductor                    
+            0   5  60   voltagesource                   
+            0   5  80   diode                   
+            0   5  100  transistor                  
+            0   5  120  currentsource                   
+                10 140  dot                 
+        grestore
+
+        newpath
+            0   0   moveto
+            0   180 rlineto
+            20  0   moveto
+            0   180 rlineto
+            80  0   moveto
+            0   180 rlineto
+            180 0   moveto
+            0   180 rlineto
+
+            0   0   moveto
+            10 
+            {
+                180     0   rlineto
+                -180    20  rmoveto
+            }
+            repeat
+        stroke
+
+        (Icon)          7   3       12.5    text
+        (Name)          7   40.5    12.5    text
+        (Description)   7   112.5   12.5    text
+
+        (Resistor)      7   25      32.5    text
+        (Capacitor)     7   25      52.5    text
+        (Inductor)      7   25      72.5    text
+        (Voltage source)7   25      92.5    text
+        (Diode)         7   25      112.5   text
+        (Transistor)    7   25      132.5   text
+        (Current source)7   25      152.5   text
+        (Dot)           7   25      172.5   text
+
+        (https://en.wikipedia.org/wiki/Resistor)        4   85      31.5    text
+        (https://en.wikipedia.org/wiki/Capacitor)       4   85      51.5    text
+        (https://en.wikipedia.org/wiki/Inductor)        4   85      71.5    text
+        (https://en.wikipedia.org/wiki/Voltage_source)  4   85      91.5    text
+        (https://en.wikipedia.org/wiki/Diode)           4   85      111.5   text
+        (https://en.wikipedia.org/wiki/Transistor)      4   85      131.5   text
+        (https://en.wikipedia.org/wiki/Current_source)  4   85      151.5   text
+        (http://madelectronics.ru/uchebnik/)            4   85      170     text
+        (elektricheskie-soedineniya.htm)                4   85      175     text
+    grestore
+} def
+
+
+/frommm
+{
+    72 mul 25.4 div  
+} def
+<< /PageSize [210 frommm 297 frommm] >> setpagedevice
+[1 frommm 0 0 -1 frommm 0 297 frommm] concat
+
+
+    grid
+    75 20 schematic
+    15 100 table
+showpage

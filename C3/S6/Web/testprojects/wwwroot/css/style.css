@@ -1,0 +1,63 @@
+@keyframes anim-nav {
+  50% {
+    left: 0;
+    bottom: 0;
+    height: 3px;
+  }
+  100% {
+    left: 0;
+    bottom: 0;
+    height: 100%;
+    z-index: -1;
+  }
+}
+body {
+  padding: 0;
+  margin: 0;
+  font-family: Verdana, Geneva, sans-serif;
+}
+
+.dws-wrapper {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+ul.nav {
+  padding: 0;
+  margin: 0;
+  display: flex;
+}
+ul.nav li {
+  list-style-type: none;
+}
+ul.nav li a {
+  outline: 1px solid orange;
+  display: block;
+  position: relative;
+  margin: 0 10px;
+  padding: 10px 15px;
+  color: #777777;
+  font-size: 16px;
+  text-decoration: none;
+  text-transform: uppercase;
+  overflow: hidden;
+  transition: 0.8s;
+}
+ul.nav li a::before {
+  position: absolute;
+  content: "";
+  background: red;
+  bottom: 0;
+  left: -100%;
+  width: 100%;
+  height: 3px;
+  transition: 0.8s 0s;
+}
+ul.nav li a:hover {
+  color: white;
+}
+ul.nav li a:hover::before {
+  animation: anim-nav 0.5s linear forwards;
+}

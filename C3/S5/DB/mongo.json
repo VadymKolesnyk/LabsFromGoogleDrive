@@ -1,0 +1,97 @@
+> use music
+switched to db music
+
+> db.createCollection("groups")
+{ "ok" : 1 }
+
+> db.createCollection("testcolection")
+{ "ok" : 1 }
+
+> db.testcolection.drop()
+true
+
+> db.groups.insertOne({"name":"The Beatles","year":1960})
+{
+        "acknowledged" : true,
+        "insertedId" : ObjectId("5f8d8410a9e1219ccfd674e2")
+}
+
+> db.groups.insertOne({"name":"Grazhdanskaya Oborona","year":1984})
+{
+        "acknowledged" : true,
+        "insertedId" : ObjectId("5f8d859ea9e1219ccfd674e3")
+}
+
+> db.groups.insertOne({_id:3,"name":"God Zmei","year":2001})
+{ "acknowledged" : true, "insertedId" : 3 }
+
+> db.groups.insertMany([{"name":"Noize MC","year":2008,"birthdayOfLeader": new Date("1985-03-09")},{"name":"Agatha Christie (band)","birthdayOfLeader":new Date("1964-10-03")}])
+{
+        "acknowledged" : true,
+        "insertedIds" : [
+                ObjectId("5f8d8b1da9e1219ccfd674e4"),
+                ObjectId("5f8d8b1da9e1219ccfd674e5")
+        ]
+}
+
+> db.groups.find()
+{ "_id" : ObjectId("5f8d8410a9e1219ccfd674e2"), "name" : "The Beatles", "year" : 1960 }
+{ "_id" : ObjectId("5f8d859ea9e1219ccfd674e3"), "name" : "Grazhdanskaya Oborona", "year" : 1984 }
+{ "_id" : 3, "name" : "God Zmei", "year" : 2001 }
+{ "_id" : ObjectId("5f8d8b1da9e1219ccfd674e4"), "name" : "Noize MC", "year" : 2008, "birthdayOfLeader" : ISODate("1985-03-09T00:00:00Z") }
+{ "_id" : ObjectId("5f8d8b1da9e1219ccfd674e5"), "name" : "Agatha Christie (band)", "birthdayOfLeader" : ISODate("1964-10-03T00:00:00Z") }
+
+> db.groups.find().limit(2)
+{ "_id" : ObjectId("5f8d8410a9e1219ccfd674e2"), "name" : "The Beatles", "year" : 1960 }
+{ "_id" : ObjectId("5f8d859ea9e1219ccfd674e3"), "name" : "Grazhdanskaya Oborona", "year" : 1984 }
+
+> db.groups.find({},{_id:0}).limit(2)
+{ "name" : "The Beatles", "year" : 1960 }
+{ "name" : "Grazhdanskaya Oborona", "year" : 1984 }
+
+> db.groups.find({},{_id:0}).sort({year: 1})
+{ "name" : "Agatha Christie (band)", "birthdayOfLeader" : ISODate("1964-10-03T00:00:00Z") }
+{ "name" : "The Beatles", "year" : 1960 }
+{ "name" : "Grazhdanskaya Oborona", "year" : 1984 }
+{ "name" : "God Zmei", "year" : 2001 }
+{ "name" : "Noize MC", "year" : 2008, "birthdayOfLeader" : ISODate("1985-03-09T00:00:00Z") }
+
+> db.groups.find({},{_id:0}).sort({year: -1})
+{ "name" : "Noize MC", "year" : 2008, "birthdayOfLeader" : ISODate("1985-03-09T00:00:00Z") }
+{ "name" : "God Zmei", "year" : 2001 }
+{ "name" : "Grazhdanskaya Oborona", "year" : 1984 }
+{ "name" : "The Beatles", "year" : 1960 }
+{ "name" : "Agatha Christie (band)", "birthdayOfLeader" : ISODate("1964-10-03T00:00:00Z") }
+
+> db.groups.find({name:"God Zmei"},{_id:0})
+{ "name" : "God Zmei", "year" : 2001 }
+
+> db.groups.find({$or: [{name:"God Zmei"},{year:1984}]},{_id:0})
+{ "name" : "Grazhdanskaya Oborona", "year" : 1984 }
+{ "name" : "God Zmei", "year" : 2001 }
+
+> db.groups.find({year:{$lt :2000}},{_id:0}).sort({year: 1})
+{ "name" : "The Beatles", "year" : 1960 }
+{ "name" : "Grazhdanskaya Oborona", "year" : 1984 }
+
+> db.groups.find({year:{$gt :2000}},{_id:0}).sort({year: 1})
+{ "name" : "God Zmei", "year" : 2001 }
+{ "name" : "Noize MC", "year" : 2008, "birthdayOfLeader" : ISODate("1985-03-09T00:00:00Z") }
+
+> db.groups.find({year:{$in : [2001,1960]}},{_id:0}).sort({year: 1})
+{ "name" : "The Beatles", "year" : 1960 }
+{ "name" : "God Zmei", "year" : 2001 }
+
+> db.groups.find({year:{$nin : [2001,1960]}},{_id:0}).sort({year: 1})
+{ "name" : "Agatha Christie (band)", "birthdayOfLeader" : ISODate("1964-10-03T00:00:00Z") }
+{ "name" : "Grazhdanskaya Oborona", "year" : 1984 }
+{ "name" : "Noize MC", "year" : 2008, "birthdayOfLeader" : ISODate("1985-03-09T00:00:00Z") }
+
+> db.groups.find({year:{$exists : true}},{_id:0}).sort({year: 1})
+{ "name" : "The Beatles", "year" : 1960 }
+{ "name" : "Grazhdanskaya Oborona", "year" : 1984 }
+{ "name" : "God Zmei", "year" : 2001 }
+{ "name" : "Noize MC", "year" : 2008, "birthdayOfLeader" : ISODate("1985-03-09T00:00:00Z") }
+
+> db.groups.find({year:{$exists : false}},{_id:0}).sort({year: 1})
+{ "name" : "Agatha Christie (band)", "birthdayOfLeader" : ISODate("1964-10-03T00:00:00Z") }
